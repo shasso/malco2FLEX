@@ -117,8 +117,9 @@ def is_list_item(paragraph) -> bool:
 def extract_plurals(text: str) -> Tuple[List[str], str]:
     """Extract plural forms following Arabic 'ج' and return (plurals, remaining_text)."""
     plurals: List[str] = []
-    # Pattern: ج followed by Syriac forms and separators. Keep it conservative to Syriac block.
-    pattern = re.compile(fr"(^|[\s؛،])ج\s*([{SYRIAC_RANGE}\s،,;/؛/]+)")
+    # Pattern: ج followed by Syriac forms (including combining diacritical marks) and separators
+    # Include combining diacritical marks (U+0300-U+036F) and Syriac-specific diacritics
+    pattern = re.compile(fr"(^|[\s؛،])ج\s*([{SYRIAC_RANGE}\u0300-\u036F\u0730-\u074A\s،,;/؛ܼ̈ܿܽ·ᵒʾʿ]+)")
     m = pattern.search(text)
     if not m:
         return plurals, text
