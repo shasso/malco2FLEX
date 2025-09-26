@@ -92,6 +92,37 @@ Core parsing rules:
 - Parenthetical token length capped (<=12 chars) to avoid greedy capture.
 - Only a predefined marker list is recognized; extend `PAREN_MARKERS` in `dict_parser.py` to add more.
 
+## Development Setup
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd Malco2FLEX
+   ```
+
+2. **Set up Python environment:**
+
+   ```bash
+   python -m venv .venv
+   # On Windows:
+   .venv\Scripts\activate
+   # On macOS/Linux:
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the parser:**
+
+   ```bash
+   python scripts/dict_parser.py --input "باب الواو.docm" --format json
+   ```
+
 ## Extending
 
 - Add new domain markers by inserting into `PAREN_MARKERS` dict.
