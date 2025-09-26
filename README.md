@@ -92,6 +92,26 @@ Core parsing rules:
 - Parenthetical token length capped (<=12 chars) to avoid greedy capture.
 - Only a predefined marker list is recognized; extend `PAREN_MARKERS` in `dict_parser.py` to add more.
 
+## Project Structure
+
+```text
+Malco2FLEX/
+├── data/                    # Input Word documents
+│   ├── باب الواو.docm      # Main dictionary source (macro-enabled)
+│   ├── باب الواو.docx      # Dictionary source (standard format)  
+│   └── باب الواو_m.docm    # Modified dictionary source
+├── scripts/                 # Python scripts
+│   └── dict_parser.py       # Main dictionary parser
+├── images/                  # Documentation and reference files
+│   ├── abbreviations.docx   # Abbreviation reference
+│   └── combined.odg         # Combined documentation
+├── .venv/                   # Python virtual environment (ignored)
+├── requirements.txt         # Python dependencies
+├── README.md               # This file
+├── .gitignore              # Git ignore rules
+└── waw.json                # Example output (ignored)
+```
+
 ## Development Setup
 
 1. **Clone the repository:**
@@ -120,7 +140,7 @@ Core parsing rules:
 4. **Run the parser:**
 
    ```bash
-   python scripts/dict_parser.py --input "باب الواو.docm" --format json
+   python scripts/dict_parser.py --input "data/باب الواو.docm" --format json
    ```
 
 ## Extending

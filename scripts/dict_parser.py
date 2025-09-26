@@ -27,7 +27,7 @@ Output schema additions per entry:
     originalGloss: legacy combined gloss string (optional)
 
 CLI:
-    python scripts/dict_parser.py --input "باب الواو.docm" --format json --output "باب-الواو.json"
+    python scripts/dict_parser.py --input "data/باب الواو.docm" --format json --output "باب-الواو.json"
 
 Dependencies: python-docx
 """
